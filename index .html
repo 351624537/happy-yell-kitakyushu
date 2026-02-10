@@ -1,0 +1,549 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 基本情報（検索結果に出やすい） -->
+  <title>Happy-Yell｜北九州市戸畑区の女性専用 シェービング＆リンパマッサージ</title>
+  <meta name="description" content="Happy-Yellは北九州市戸畑区の女性専用シェービング＆リンパマッサージサロン。シェービングとリンパマッサージが両方できるのが強み。完全予約制で、予約は電話またはInstagramのDM（おすすめ）から。営業時間10:00〜19:00、毎週月曜定休。一枝北口バス停から徒歩4分、九州工大前駅から徒歩21分。駐車場1台あり。現金・PayPay対応。初めての方歓迎、痛みなし、相談OK。" />
+
+  <style>
+    :root{
+      --brand:#a21d41;
+      --bg:#fff;
+      --soft:#f8c6d1;
+      --text:#333;
+      --muted:#666;
+      --line:#e7e7e7;
+      --note:#8b7355;
+      --card:#ffffff;
+      --soft2:#fff7f9;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Arial, sans-serif;
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.75;
+    }
+
+    a{ color:var(--brand); }
+    a:hover{ text-decoration:none; }
+
+    header{
+      text-align:center;
+      padding:44px 20px 34px;
+      background:var(--soft);
+    }
+
+    header h1{
+      margin:0 0 10px;
+      font-size:1.9rem;
+      color:var(--brand);
+      letter-spacing: .02em;
+    }
+
+    header p{
+      margin:0;
+      font-size:1.05rem;
+      color:#444;
+    }
+
+    .container{
+      max-width:980px;
+      margin:0 auto;
+      padding:18px 16px 40px;
+    }
+
+    .top-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin:16px auto 0;
+      padding:0;
+      list-style:none;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:11px 14px;
+      border-radius:12px;
+      text-decoration:none;
+      border:1px solid rgba(162,29,65,.25);
+      background:#fff;
+      color:var(--brand);
+      font-weight:700;
+    }
+    .btn.primary{
+      background:var(--brand);
+      color:#fff;
+      border-color:var(--brand);
+    }
+
+    .section-title{
+      font-size:1.55rem;
+      margin:38px 0 14px;
+      border-bottom:2px solid var(--brand);
+      padding-bottom:8px;
+    }
+
+    .lead{
+      margin:0 0 10px;
+      color:#444;
+    }
+
+    .kv-note{
+      margin-top:10px;
+      color:#5a3d46;
+      font-size:.98rem;
+    }
+
+    /* 特徴カード */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(12, 1fr);
+      gap:14px;
+      margin-top:12px;
+    }
+    .card{
+      grid-column:span 6;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px 14px 12px;
+    }
+    .card h3{
+      margin:0 0 6px;
+      font-size:1.05rem;
+      color:#222;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:.98rem;
+    }
+
+    /* 画像 */
+    .about img{
+      width:100%;
+      max-width:860px;
+      display:block;
+      margin:16px auto 0;
+      border-radius:14px;
+    }
+
+    /* MENU */
+    .menu-note{
+      margin:6px 0 0;
+      font-size:0.95rem;
+      color:var(--note);
+    }
+
+    .menu-image{
+      width:min(560px, 92%);
+      height:auto;
+      display:block;
+      margin:18px auto 8px;
+      border-radius:14px;
+    }
+
+    .menu-item{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      margin:16px 0;
+      padding:14px 0;
+      border-bottom:1px dashed #ddd;
+    }
+
+    .item-info{ max-width:72%; }
+
+    .item-name{
+      font-size:1.05rem;
+      font-weight:800;
+    }
+
+    .badge{
+      background:var(--brand);
+      color:#fff;
+      font-size:0.75rem;
+      padding:3px 7px;
+      border-radius:7px;
+      margin-left:6px;
+      vertical-align:middle;
+    }
+
+    .item-description{
+      font-size:0.95rem;
+      color:#555;
+      margin-top:6px;
+    }
+
+    .item-price{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      font-weight:800;
+      color:var(--brand);
+      white-space:nowrap;
+      min-width:120px;
+      justify-content:flex-end;
+    }
+
+    .tax{
+      font-size:0.85rem;
+      color:#666;
+      font-weight:600;
+    }
+
+    .subnote{
+      margin-top:18px;
+      color:var(--note);
+    }
+
+    /* 店舗情報（表） */
+    .info{
+      border:1px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+      margin-top:12px;
+    }
+    .info-row{
+      display:flex;
+      gap:0;
+      border-top:1px solid var(--line);
+    }
+    .info-row:first-child{ border-top:none; }
+    .info-key{
+      width:32%;
+      padding:12px 12px;
+      background:var(--soft2);
+      color:#333;
+      font-weight:800;
+    }
+    .info-val{
+      width:68%;
+      padding:12px 12px;
+      color:#444;
+    }
+
+    /* Q&A */
+    .qa{
+      margin-top:12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+    }
+    details{
+      border-top:1px solid var(--line);
+      padding:0;
+    }
+    details:first-child{ border-top:none; }
+    summary{
+      cursor:pointer;
+      padding:12px 12px;
+      font-weight:800;
+      background:#fff;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details .answer{
+      padding:0 12px 14px;
+      color:#444;
+    }
+
+    footer{
+      text-align:center;
+      padding:22px 16px;
+      margin-top:36px;
+      border-top:1px solid #ccc;
+      font-size:0.9rem;
+      color:#666;
+    }
+
+    /* スマホ対応 */
+    @media (max-width: 720px){
+      header h1{ font-size:1.55rem; }
+      .card{ grid-column:span 12; }
+      .menu-item{ flex-direction:column; align-items:flex-start; }
+      .item-info{ max-width:100%; }
+      .item-price{ justify-content:flex-start; }
+      .info-row{ flex-direction:column; }
+      .info-key, .info-val{ width:100%; }
+      .info-key{ border-bottom:1px solid var(--line); }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <h1>Happy-Yell｜北九州市戸畑区の女性専用 シェービング＆リンパマッサージ</h1>
+  <p>シェービングもリンパマッサージも、どちらも受けられるサロン</p>
+
+  <ul class="top-actions" aria-label="予約・連絡先">
+    <li><a class="btn primary" href="tel:090-4774-7407">電話で予約する（090-4774-7407）</a></li>
+    <li>
+      <a class="btn" href="https://www.instagram.com/happyhappy.yell/" target="_blank" rel="noopener noreferrer">
+        InstagramのDMで予約する（@happyhappy.yell）
+      </a>
+    </li>
+  </ul>
+
+  <p class="kv-note">完全予約制／初めての方歓迎／痛みなし／ご相談OK（おすすめ：InstagramのDM）</p>
+</header>
+
+<main class="container">
+
+  <!-- お店の紹介 -->
+  <section class="about">
+    <h2 class="section-title">お店について</h2>
+    <p class="lead">
+      Happy-Yell（ハッピーエール）は、<strong>女性専用</strong>のシェービング＆リンパマッサージサロンです。
+      丁寧な施術とアットホームな空間で、リラックスした時間をお過ごしいただけます。
+      <strong>10代〜80代</strong>まで、幅広い年代の方にご来店いただいています。
+    </p>
+
+    <div class="cards" role="list" aria-label="特徴">
+      <div class="card" role="listitem">
+        <h3>強み</h3>
+        <p>シェービングとリンパマッサージ、両方できるのが特徴です。</p>
+      </div>
+      <div class="card" role="listitem">
+        <h3>初めての方へ</h3>
+        <p>初めての方も歓迎です。痛みはありません。気になることは事前にご相談ください。</p>
+      </div>
+      <div class="card" role="listitem">
+        <h3>当日の準備</h3>
+        <p>持ち物は<strong>お金のみ</strong>でOK。お化粧をして来ていただいても大丈夫です。</p>
+      </div>
+      <div class="card" role="listitem">
+        <h3>お支払い</h3>
+        <p>現金／PayPay に対応しています。</p>
+      </div>
+    </div>
+
+    <img src="salon.jpg" alt="北九州市戸畑区の女性専用サロン Happy-Yell の店内写真">
+  </section>
+
+  <!-- メニュー -->
+  <section class="menu-section">
+    <h2 class="section-title">メニュー</h2>
+    <p class="menu-note">※ メニューは人気順に掲載しています</p>
+
+    <img src="treatment.jpg" alt="リンパマッサージの施術風景" class="menu-image">
+
+    <!-- 一番人気 -->
+    <div class="menu-item">
+      <div class="item-info">
+        <div class="item-name">
+          3時間 ごほうびコース <span class="badge">一番人気</span>
+        </div>
+        <div class="item-description">
+          全身リンパマッサージ（120分）＋シェービングコース（60分）
+        </div>
+      </div>
+      <div class="item-price">
+        ¥14,000 <span class="tax">税込</span>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-info">
+        <div class="item-name">メンテナンスコース</div>
+        <div class="item-description">
+          ごほうびコースの良いとこ取り<br>
+          リンパマッサージ100分＋シェービングのみ
+        </div>
+      </div>
+      <div class="item-price">
+        ¥10,500 <span class="tax">税込</span>
+      </div>
+    </div>
+
+    <!-- リンパ -->
+    <div class="menu-item">
+      <div class="item-info">
+        <div class="item-name">月に2回の体質改善コース（リンパ）</div>
+        <div class="item-description">
+          120分：1回目 ¥10,000 / 2回目 ¥8,000<br>
+          100分：1回目 ¥8,800 / 2回目 ¥7,000
+        </div>
+      </div>
+      <div class="item-price">
+        <span class="tax">—</span>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-info">
+        <div class="item-name">通常（リンパ）</div>
+        <div class="item-description">
+          120分 ¥11,000（初回 ¥9,000）<br>
+          100分 ¥8,500（初回 ¥6,500）
+        </div>
+      </div>
+      <div class="item-price">
+        <span class="tax">—</span>
+      </div>
+    </div>
+
+    <!-- シェービング -->
+    <div class="menu-item">
+      <div class="item-info">
+        <div class="item-name">艶肌シェービングコース</div>
+        <div class="item-description">
+          フェイシャル・首肩・デコルテ・両腕・ヘッドマッサージ付き（90分）
+        </div>
+      </div>
+      <div class="item-price">
+        ¥8,000 <span class="tax">税込</span>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-info">
+        <div class="item-name">お呼ばれコース</div>
+        <div class="item-description">
+          艶肌シェービングコース＋深襟シェービング
+        </div>
+      </div>
+      <div class="item-price">
+        ¥9,500 <span class="tax">税込</span>
+      </div>
+    </div>
+
+    <div class="menu-item">
+      <div class="item-info">
+        <div class="item-name">シェービングのみ</div>
+        <div class="item-description">
+          ヘッドマッサージ付き（45分）
+        </div>
+      </div>
+      <div class="item-price">
+        ¥3,800 <span class="tax">税込</span>
+      </div>
+    </div>
+
+    <p class="subnote">※ ブライダルシェービングも受付しております</p>
+  </section>
+
+  <!-- アクセス・予約 -->
+  <section class="contact">
+    <h2 class="section-title">アクセス・予約・連絡先</h2>
+
+    <div class="info" aria-label="店舗情報">
+      <div class="info-row">
+        <div class="info-key">所在地</div>
+        <div class="info-val">福岡県北九州市戸畑区境川（詳しい住所はご予約時にご案内します）</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-key">営業時間</div>
+        <div class="info-val">10:00〜19:00</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-key">定休日</div>
+        <div class="info-val">毎週月曜日</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-key">最寄り</div>
+        <div class="info-val">
+          一枝北口バス停から徒歩4分<br>
+          九州工大前駅から徒歩21分
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-key">駐車場</div>
+        <div class="info-val">1台あり</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-key">予約</div>
+        <div class="info-val">
+          完全予約制（電話／InstagramのDM）<br>
+          おすすめ：InstagramのDM（確認・返信がスムーズです）<br>
+          電話：<a href="tel:090-4774-7407">090-4774-7407</a><br>
+          Instagram：
+          <a href="https://www.instagram.com/happyhappy.yell/" target="_blank" rel="noopener noreferrer">
+            @happyhappy.yell
+          </a>
+        </div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-key">お支払い</div>
+        <div class="info-val">現金／PayPay</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-key">持ち物</div>
+        <div class="info-val">お金のみ</div>
+      </div>
+
+      <div class="info-row">
+        <div class="info-key">その他</div>
+        <div class="info-val">お化粧OK／初めての方歓迎／痛みなし／ご相談対応可能／10代〜80代の方が来店</div>
+      </div>
+    </div>
+
+    <h3 class="section-title" style="font-size:1.25rem; margin-top:34px;">よくある質問</h3>
+
+    <div class="qa" aria-label="よくある質問">
+      <details>
+        <summary>初めてでも大丈夫ですか？</summary>
+        <div class="answer">はい。初めての方も歓迎です。気になることがあれば、予約時や来店前にお気軽にご相談ください。</div>
+      </details>
+      <details>
+        <summary>痛みはありますか？</summary>
+        <div class="answer">痛みはありません。心配な点があれば事前にお伝えください。</div>
+      </details>
+      <details>
+        <summary>当日の持ち物は何が必要ですか？</summary>
+        <div class="answer">持ち物はお金のみでOKです。</div>
+      </details>
+      <details>
+        <summary>お化粧はして行ってもいいですか？</summary>
+        <div class="answer">はい。お化粧をして来ていただいても大丈夫です。</div>
+      </details>
+      <details>
+        <summary>支払い方法を教えてください</summary>
+        <div class="answer">現金とPayPayに対応しています。</div>
+      </details>
+      <details>
+        <summary>予約はどうすればいいですか？</summary>
+        <div class="answer">
+          完全予約制です。電話またはInstagramのDMでご予約ください。おすすめはInstagramのDMです（確認・返信がスムーズです）。<br>
+          電話：<a href="tel:090-4774-7407">090-4774-7407</a><br>
+          Instagram：
+          <a href="https://www.instagram.com/happyhappy.yell/" target="_blank" rel="noopener noreferrer">
+            @happyhappy.yell
+          </a>
+        </div>
+      </details>
+      <details>
+        <summary>駐車場はありますか？</summary>
+        <div class="answer">はい。駐車場は1台あります。</div>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Happy-Yell
+</footer>
+
+</body>
+</html>
+```
